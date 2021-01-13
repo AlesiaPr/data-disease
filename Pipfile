@@ -46,6 +46,7 @@ Django = "==2.2"
 PyPrind = "*"
 ipython_genutils = "==0.2.0"
 Pygments = "==2.7.2"
+django-cors-headers = "==2.2.0"
 
 [dev-packages]
 

@@ -43,15 +43,29 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 3rd partry
+
+    # 3rd party
+    'corsheaders',
     'crispy_forms',
-    # local apps
+    'storages',
+    'rest_framework',
+
+    # local
+    'api',
     'classifiers',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ]
+} 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware', 
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware', # Part 3 adding
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -61,6 +75,11 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ORIGIN_WHITELIST = (
+    'localhost:8000/',
+    #'data-bore-dashboard.herokuapp.com/',
+)
 
 ROOT_URLCONF = 'data_bore_project.urls'
 
