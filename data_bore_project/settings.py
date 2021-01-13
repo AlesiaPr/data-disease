@@ -78,7 +78,7 @@ MIDDLEWARE = [
 
 CORS_ORIGIN_WHITELIST = (
     'localhost:8000/',
-    #'data-bore-dashboard.herokuapp.com/',
+    'health-review-dashboard.herokuapp.com/',
 )
 
 ROOT_URLCONF = 'data_bore_project.urls'
@@ -94,8 +94,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-
-'django.contrib.messages.context_processors.messages',
+                'django.contrib.messages.context_processors.messages',
             ],
         },
     },
